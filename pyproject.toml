@@ -1,0 +1,28 @@
+[project]
+name = "PR_reviewer"
+version = "0.1.0"
+description = """\
+        A FastAPI based backend service to review PRs using AI agents.\
+    """
+authors = [
+    {name = "Anu-Ra-g", email = "nayakanurag078@gmail.com"},
+]
+dependencies = [
+    "fastapi[standard]==0.115.11", 
+    "crewai==0.108.0",
+    ]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[project.optional-dependencies]
+dev = [
+    "python-dotenv>=1.0.1",
+]
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+dev.cmd = "fastapi dev app/main.py"
+dev.env_file = ".env"
