@@ -8,8 +8,9 @@ authors = [
     {name = "Anu-Ra-g", email = "nayakanurag078@gmail.com"},
 ]
 dependencies = [
-    "fastapi[standard]==0.115.11", 
+    "fastapi[standard]==0.115.11",
     "crewai==0.108.0",
+    "groq>=0.20.0",
     ]
 requires-python = "==3.12.*"
 readme = "README.md"
@@ -21,3 +22,14 @@ distribution = false
 [tool.pdm.scripts]
 dev.cmd = "fastapi dev app/main.py"
 dev.env_file = ".env"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "ruff>=0.11.2",
+    "mypy>=1.15.0",
+    "pre-commit>=4.2.0",
+]
+test = [
+    "pytest>=8.3.5",
+]
